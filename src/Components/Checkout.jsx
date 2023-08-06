@@ -13,7 +13,7 @@ export default function Checkout({cart, setCart}) {
           alert("Wrong input on zip code");
           return false;
       }
-      if(cart.length == 0){
+      if(cart.length === 0){
           alert("Your cart is empty");
           return false;
       }
