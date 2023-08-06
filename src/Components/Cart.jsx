@@ -20,7 +20,7 @@ export default function Cart({cart, setCart}) {
                     )
                 })}
             </ol>
-            <p>This </p>
+            <p>Your donations has qualified you for the following items: </p>
             <ul>
                 {total >= 100 ? (<li>{bonusItems[0]}</li>) : null}
                 {total >= 300 ? (<li>{bonusItems[1]}</li>) : null}

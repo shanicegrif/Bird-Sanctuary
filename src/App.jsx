@@ -12,7 +12,7 @@ function App () {
 
 
   return (
-    <div>
+    <div className="page-layout">
       <Cart cart={cart} setCart = {setCart} />
       <Checkout cart = {cart} setCart = {setCart} />
       <div className="birds"> <BirdList bird = {bird} setCart = {setCart} /></div>
