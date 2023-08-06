@@ -1,23 +1,33 @@
-// import { useState } from "react";
+export default function Checkout({cart, setCart}) {
+  function resetHandler() {
+    document.getElementById("checkout-form").reset();
+    setCart([]);
+  }
+ 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const pluralBirds = cart.length > 1 ? "birds" : "bird";
+    alert(`You have adopted ${cart.length} ${pluralBirds}. Thank you!`);
+    resetHandler();
+  }
 
-export default function Checkout() {
   return (
     <>
-      <form>
-        <h3>Checkout</h3>
-        <label htmlFor="name">First Name</label>
-        <input type="text" id="name" />
+      <form id="checkout-form" className="submit" onSubmit={handleSubmit}>
+        <h2>Checkout</h2>
+        <label htmlFor="first-name">First Name</label>
+        <input type="text" id="first-name" required />
 
-        <label htmlFor="name">Last Name</label>
-        <input type="text" id="name" />
+        <label htmlFor="last-name">Last Name</label>
+        <input type="text" id="last-name" required />
 
-        <label htmlFor="name">Email</label>
-        <input type="text" id="email" />
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" required />
 
-        <label htmlFor="name">Zip Code</label>
-        <input type="number" id="zipcode" />
+        <label htmlFor="zipcode">Zip Code</label>
+        <input type="number" id="zipcode" required />
         <br />
-        <input type="submit" />
+        <input type="submit" value="Submit" />
       </form>
     </>
   );

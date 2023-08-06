@@ -1,10 +1,10 @@
 import BirdCard from "./BirdCard"
 
-export default function BirdList(prop) {
+export default function BirdList({bird, setCart}) {
     return (
         <ul>
-            {prop.bird.map((card) => {
-                <BirdCard bird = {card} />
+            {bird.map((card) => {
+               return <BirdCard bird = {card} setCart = {setCart} />
             })}
         </ul>
     );
